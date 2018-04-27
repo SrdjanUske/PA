@@ -55,7 +55,7 @@ def test(n, m):
 	hash_table = []
 	numbers = random.sample(range(1, n+1), n)
 	for i in range(0, m):
-		hash_table.append([None])
+		hash_table.append(None)
 
 	# (i)
 	start = time.clock()
@@ -69,10 +69,10 @@ def test(n, m):
 	start = time.clock()
 	indx = HASH_SEARCH(hash_table, linearProbing, num, m, firstHashFunc, secondHashFunc)
 	endSearch = time.clock() - start 
-	print("n = " + str(n) + "|m = " + str(m) + "|timeInserting = " + str(endInsert) + "|timeSearching = " + str(timeSearching))
+	print("n = " + str(n) + "|m = " + str(m) + "|timeInserting = " + str(endInsert) + "|timeSearching = " + str(endSearch))
 
 
 if __name__ == "__main__":
 	for n in [10000, 50000, 100000]:
-			for m in [n, n//2, n//4]:
-				test(n, m)
+		for m in [n, n//2, n//4]:
+			test(n, m)
