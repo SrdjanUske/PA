@@ -1,14 +1,9 @@
 import random
 
 class Node:
-    """
-    Tree node: left child, right child and data
-    """
+
     def __init__(self, p = None, l = None, r = None, d = None):
-        """
-        Node constructor 
-        @param A node data object
-        """
+
         self.parent = p
         self.left = l
         self.right = r
@@ -23,16 +18,11 @@ class Node:
         #print("char = ", self.data.char)
 
 class Data:
-    """
-    Tree data: Any object which is used as a tree node data
-    """
+
     def __init__(self, val1, val2):
-        """
-        Data constructor
-        @param A list of values assigned to object's attributes
-        """
         self.num = val1
         self.char = val2
+
 
 # 1. ZADATAK
 def addNode(root, node):
@@ -142,7 +132,7 @@ def Transplant(root,u,v):
         v.parent = u.parent
 
 
-# VI ZADATAK
+# 6. ZADATAK
 def new_inorder_tree_walk(x, lista):
     if x != None:
         new_inorder_tree_walk(x.left, lista)
