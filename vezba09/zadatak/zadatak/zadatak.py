@@ -1,4 +1,4 @@
-from enum import Enum	
+from enum import Enum
 import math
 
 
@@ -24,11 +24,9 @@ class Vertex:
         print(self.d1)
 
     def printNodes(self):
-        print(self.d1)
-        print("----------------")
+        print("Nodes for vertex " + self.d1 + ":")
         for i in range(0, len(self.obj)):
             self.obj[i].printVertex()
-        print("\n")
 
 class Data:
     """
@@ -112,14 +110,13 @@ def TOPOLOGICAL_SORT(G):
     DFS(G)    
     return lista    
 
-def printTime(obj):
-    print("Start: " + str(obj.s) + " , Finish: " + str(obj.f))
+def printVertex(obj):
+    print(obj.d1 + ": " + "Start: " + str(obj.s) + " , Finish: " + str(obj.f))
 
 if __name__ == "__main__":
-    #u = Vertex(c=VertexColor.WHITE, d1=1, d2=22)
-    #v = Vertex(c=VertexColor.GRAY, p=u, d1=33, d2=4)
-
     # 1)
+    print("ZADATAK 1")
+    print("----------")
     list = []
     vertex = ['A', 'B', 'C', 'D', 'E']
     for i in range(0, len(vertex)):
@@ -129,13 +126,16 @@ if __name__ == "__main__":
         list[i].obj = []
         for j in range(0, len(nodes[i])):
             list[i].obj.append(nodes[i][j])
-    print("Printing all the nodes of a Vertex:")
+    print("(i)")
     for i in range(0, len(nodes)):
         list[i].printNodes()
+    print("\n(ii)")
     for i in range(0, len(list)):
         printRelation(list[i])
 
     # 2)
+    print("\nZADATAK 2")
+    print("----------")
     list = []
     vertex = ['r', 's', 't', 'u', 'v', 'w', 'x', 'y']
     for i in range(0, len(vertex)):
@@ -147,13 +147,15 @@ if __name__ == "__main__":
             list[i].obj.append(nodes[i][j])
 
     BFS(list, list[1])
-    print("\nPath from " + list[1].d1 + " to " + list[4].d1 + ":")
+    print("Path from " + list[1].d1 + " to " + list[4].d1 + ":")
     PRINT_PATH(list, list[1], list[4])
 
     # 3)
+    print("\nZADATAK 3")
+    print("----------")
     time = 0
-    lista = []
     list = []
+    lista = []
     vertex = ['u', 'v', 'w', 'x', 'y', 'z']
     for i in range(0, len(vertex)):
         list.append(Vertex(d1 = vertex[i]))
@@ -163,9 +165,14 @@ if __name__ == "__main__":
         for j in range(0, len(nodes[i])):
             list[i].obj.append(nodes[i][j])
     DFS(list)
+    for i in range(0, len(lista)):
+        printVertex(lista[i])
 
     # 4)
+    print("\nZADATAK 4")
+    print("----------")
     list = []
+    lista = []
     vertex = ['undershorts', 'socks', 'watch', 'pants', 'shoes', 'shirt', 'belt', 'tie', 'jacket']
     for i in range(0, len(vertex)):
         list.append(Vertex(d1 = vertex[i]))
@@ -177,5 +184,5 @@ if __name__ == "__main__":
 
     lista = TOPOLOGICAL_SORT(list)
     for i in range(0, len(lista)):
-        printTime(lista[i])
+        printVertex(lista[i])
     

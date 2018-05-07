@@ -21,9 +21,9 @@ def universalHashing(key, m, p, a, b):
 
 def CHAINED_HASH_INSERT(T, x, m, p = None, a = None, b = None):
 	if p != None and a != None and b != None:
-		h = universalHashing(x.key, m)
+		h = int(universalHashing(x.key, m))
 	else:
-		h = multiplicationMethod(x.key, m)
+		h = int(multiplicationMethod(x.key, m))
 
 	for elem in T[h]:
 		if elem.key == x.key:
